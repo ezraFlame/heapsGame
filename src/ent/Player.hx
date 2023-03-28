@@ -10,7 +10,7 @@ class Player extends Entity {
     var moveSpeed:Float = 0.1;
     var jumpForce:Float = 0.25;
 
-    var hangTime:Float = 0.5;
+    var hangTime:Float = 0.25;
     var hangTimeCounter:Float;
 
     var jumpBuffer:Float = 0.1;
@@ -47,7 +47,6 @@ class Player extends Entity {
         } else {
             hangTimeCounter -= Timer.dt;
         }
-        trace(hangTimeCounter);
 
         if (Key.isPressed(Key.SPACE) && hangTimeCounter > 0) {
             velocityY = -jumpForce * Timer.tmod;
