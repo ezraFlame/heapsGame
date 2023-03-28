@@ -8,10 +8,13 @@ import h2d.col.Bounds;
 
 class Entity {
     var game:Game;
-    var bounds = Bounds;
 
     var width:Float;
     var height:Float;
+
+    var kind:Data.EntityKind;
+
+    public var overlapRadius:Float;
 
     public var sprite:Drawable;
 
@@ -24,7 +27,16 @@ class Entity {
 
     public var grounded:Bool;
 
-    public function new(x, y) {
+    public static function create(kind:Data.EntityKind, x:Float, y:Float):Entity {
+        switch(kind) {
+            case jumpUpgrade:
+                return new JumpUpgrade(kind, x, y);
+            default:
+                return new Entity(kind, x, y);
+        }
+    }
+
+    public function new(kind, x, y) {
         game = Game.instance;
         game.entities.push(this);
 
@@ -32,6 +44,10 @@ class Entity {
         height = 1;
 
         drag = 0.96;
+
+        this.kind = kind;
+
+        overlapRadius = 0;
 
         init();
 
@@ -112,5 +128,12 @@ class Entity {
                 y = Math.ceil(y) - 0.001;
             }
         }
+    }
+
+    public function overlaps(entity:Entity) {
+        var maxDistance = overlapRadius + entity.overlapRadius;
+
+        var distanceSquared = (entity.x - x) * (entity.x - x) + (entity.y - y) * (entity.y - y);
+        return distanceSquared <= maxDistance * maxDistance;
     }
 }

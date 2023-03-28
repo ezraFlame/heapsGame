@@ -1,5 +1,4 @@
 import ent.Player;
-import ent.GravityTest;
 import ent.Entity;
 import h2d.CdbLevel;
 import hxd.Res;
@@ -25,9 +24,11 @@ class Game extends App {
 
         levelCollision = level.buildStringProperty("collide");
 
+        createLevelEntities();
+
         s2d.camera.setAnchor(0.5, 0.5);
 
-        s2d.camera.follow = new Player(1, 1).sprite;
+        s2d.camera.follow = new Player(null, 1, 1).sprite;
 
         s2d.camera.setScale(2, 2);
     }
@@ -44,5 +45,12 @@ class Game extends App {
 
     public function levelCollide(x:Float, y:Float) {
         return levelCollision[Std.int(x) + Std.int(y) * level.width] == "Full";
+    }
+
+    function createLevelEntities() {
+        var levelData = Data.levelData.all[0];
+        for (entity in levelData.entities) {
+            Entity.create(entity.kindId, entity.x, entity.y);
+        }
     }
 }
