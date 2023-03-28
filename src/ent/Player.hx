@@ -21,9 +21,9 @@ class Player extends Entity {
     }
 
     override function init() {
-        sprite = new Bitmap(Tile.fromColor(0xFF0000, 8, 16), game.s2d);
+        sprite = new Bitmap(Tile.fromColor(0xFF0000, 8, 24), game.s2d);
         width = 0.5;
-        height = 1;
+        height = 1.5;
 
         hangTimeCounter = 0;
         jumpBufferCounter = 0;

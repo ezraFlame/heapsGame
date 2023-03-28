@@ -83,10 +83,6 @@ class Entity {
 
     function move(dx:Float, dy:Float) {
         x += dx;
-        y += dy;
-    }
-
-    function handleCollision() {
         // Horizontal collision
         if (velocityX > 0) { // Right
             if (collide(width, 0 + 0.001) || collide(width, height / 2) || collide(width, height)) {
@@ -100,12 +96,13 @@ class Entity {
             }
         }
 
+        y += dy;
         grounded = false;
         // Vertical collision
         if (velocityY > 0) { // Down
             if (collide(0, height) || collide(width / 2, height) || collide(width, height)) {
                 if (velocityY > 0) velocityY = 0;
-                y = Math.ceil(y) - height - 0.001;
+                y = Math.floor(y + height) - height - 0.001;
                 grounded = true;
             }
         } else { // Up
