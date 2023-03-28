@@ -1,0 +1,6 @@
+-cp src
+-lib heaps
+-lib hldx
+-lib castle
+-hl build.hl
+-main Game

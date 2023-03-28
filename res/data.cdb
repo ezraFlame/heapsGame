@@ -1,0 +1,150 @@
+{
+	"sheets": [
+		{
+			"name": "levelData",
+			"columns": [
+				{
+					"name": "id",
+					"typeStr": "0"
+				},
+				{
+					"name": "width",
+					"typeStr": "3"
+				},
+				{
+					"name": "height",
+					"typeStr": "3"
+				},
+				{
+					"name": "props",
+					"typeStr": "16"
+				},
+				{
+					"name": "tileProps",
+					"typeStr": "8"
+				},
+				{
+					"name": "layers",
+					"typeStr": "8"
+				}
+			],
+			"lines": [
+				{
+					"id": "testLevel",
+					"width": 32,
+					"height": 16,
+					"tileProps": [],
+					"layers": [
+						{
+							"name": "ground",
+							"data": {
+								"file": "tiles/debugTiles.png",
+								"size": 16,
+								"stride": 2,
+								"data": "AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAgACAAIAAgABAAEAAQABAAEAAQACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAQABAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAQACAAIAAgACAAIAAgABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAgACAAIAAgACAAIAAQABAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgABAAIAAgACAAIAAgACAAEAAQACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQABAAIAAQABAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQABAAIAAgABAAEAAgACAAIAAgABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAQABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAQABAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQACAAIAAgACAAIAAgABAAEAAgACAAIAAQABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgABAAEAAgACAAIAAgACAAEAAQABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAQABAAIAAgACAAIAAQABAAEAAQABAAEAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAA=="
+							}
+						}
+					],
+					"props": {
+						"tileSize": 16,
+						"layers": [
+							{
+								"l": "ground",
+								"p": {
+									"alpha": 1
+								}
+							}
+						]
+					}
+				}
+			],
+			"separators": [],
+			"props": {
+				"level": {
+					"tileSets": {
+						"tiles/debugTiles.png": {
+							"stride": 2,
+							"sets": [],
+							"props": [
+								{
+									"collide": "Full"
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"name": "levelData@tileProps",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "6:collide",
+					"name": "collide",
+					"display": null
+				}
+			]
+		},
+		{
+			"name": "levelData@layers",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"name": "name",
+					"typeStr": "1"
+				},
+				{
+					"name": "data",
+					"typeStr": "15"
+				}
+			]
+		},
+		{
+			"name": "collide",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "14",
+					"name": "icon",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "None",
+					"icon": {
+						"file": "tiles/collisionIcons.png",
+						"size": 16,
+						"x": 0,
+						"y": 0
+					}
+				},
+				{
+					"id": "Full",
+					"icon": {
+						"file": "tiles/collisionIcons.png",
+						"size": 16,
+						"x": 1,
+						"y": 0
+					}
+				}
+			],
+			"separators": [],
+			"props": {}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}
