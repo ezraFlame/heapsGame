@@ -10,7 +10,7 @@ class Player extends Entity {
     var moveSpeed:Float = 0.1;
     var jumpForce:Float = 0.25;
 
-    var hangTime:Float = 0.25;
+    var hangTime:Float = 0.15;
     var hangTimeCounter:Float;
 
     var jumpBuffer:Float = 0.1;
@@ -40,7 +40,7 @@ class Player extends Entity {
             moveX = 1;
         }
 
-        velocityX = moveSpeed * moveX * Timer.tmod;
+        velocityX = moveSpeed * moveX;
 
         if (grounded) {
             hangTimeCounter = hangTime;
@@ -48,8 +48,14 @@ class Player extends Entity {
             hangTimeCounter -= Timer.dt;
         }
 
-        if (Key.isPressed(Key.SPACE) && hangTimeCounter > 0) {
-            velocityY = -jumpForce * Timer.tmod;
+        if (Key.isPressed(Key.SPACE)) {
+            jumpBufferCounter = jumpBuffer;
+        } else {
+            jumpBufferCounter -= Timer.dt;
+        }
+
+        if (jumpBufferCounter > 0 && hangTimeCounter > 0) {
+            velocityY = -jumpForce;
         }
     }
 }

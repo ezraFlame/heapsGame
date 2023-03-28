@@ -1,5 +1,6 @@
 package ent;
 
+import hxd.Timer;
 import h2d.Drawable;
 import h2d.Tile;
 import h2d.Bitmap;
@@ -82,7 +83,7 @@ class Entity {
     }
 
     function move(dx:Float, dy:Float) {
-        x += dx;
+        x += dx * Timer.tmod;
         // Horizontal collision
         if (velocityX > 0) { // Right
             if (collide(width, 0 + 0.001) || collide(width, height / 2) || collide(width, height)) {
@@ -96,7 +97,7 @@ class Entity {
             }
         }
 
-        y += dy;
+        y += dy * Timer.tmod;
         grounded = false;
         // Vertical collision
         if (velocityY > 0) { // Down
